@@ -104,6 +104,40 @@ function convert(){
       }
     }
     // C = 100, CC = 200, CCC = 300
+    if (RAvalue.charAt(i) == 'X'){
+      if (RAvalue.charAt(i++) == 'X'){
+        if (RAvalue.charAt(i+2) == 'X'){
+          RAvalue.replace(RAvalue.charAT(i), '0');
+          RAvalue.replace(RAvalue.charAT(i++), '0');
+          RAvalue.replace(RAvalue.charAT(i+2), '0');
+          numbers.push('30');
+          i = i + 2
+        }
+        else {
+          RAvalue.replace(RAvalue.charAt(i), '0');
+          RAvalue.replace(RAvalue.charAT(i++), '0');
+          numbers.push('20');
+          i = i++;
+        }
+
+      }
+      else if (RAvalue.charAt(i++) == 'L'){
+        RAvalue.replace(RAvalue.charAt(i), '0');
+        RAvalue.replace(RAvalue.charAT(i++), '0');
+        numbers.push('40');
+        i = i++;
+      }
+      else if (RAvalue.charAt(i++) == 'C'){
+        RAvalue.replace(RAvalue.charAt(i), '0');
+        RAvalue.replace(RAvalue.charAT(i++), '0');
+        numbers.push('90');
+        i = i++;
+      }
+      else {
+        RAvalue.replace(RAvalue.charAt(i), '0');
+        numbers.push('10');
+      }
+    }
 }
 
 /*
