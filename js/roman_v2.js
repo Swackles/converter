@@ -24,8 +24,7 @@ function check(){
   }
 
   else {
-    console.error('string ('+RAvalue+') is invalid, contains numbers');
-    end();
+    end('contains numbers');
 }}
 
 
@@ -170,8 +169,7 @@ function convert(){
       numbers.push('500');
     }
     else {
-      break;
-      end()
+      end('contains invalid   letter')
     }
   }
 
@@ -206,6 +204,7 @@ function calculation() {
 
 */
 function end(reason){
+  console.error('string '+RAvalue+' is invalid, '+reason);
   numbers.length = 0;
   console.timeEnd();
   console.groupEnd();
