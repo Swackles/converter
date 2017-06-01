@@ -12,23 +12,31 @@ This is a number converter, it convers diffrent types of numbers to arabic.
 #### Roman to Arabian
 
 * ```function RA() ```
-  * starts console.time
-  * takes string from ```class="RAinput"```
-  * writes it to ```var RAvalue;```
-  * start console.group
-  * starts ```function check()```...
+  * Starts console.time
+  * Takes string from ```class="RAinput"```
+  * Writes it to ```var RAvalue;```
+  * Start console.group
+  * Starts ```function check()```
+
+<br />
 
 * ```function check()```
-  * if string is not a number
-    * starts ```function convert()```
-    * logs that string is valid
-  * else
-    * logs that string is invalid
-    * starts ```function end()```...
+  * If string is not a number
+    * Starts ```function convert()```
+    * Logs that string is valid
+  * Else
+    * Logs that string is invalid
+    * Starts ```function end()```...
+
+<br />
 
 * ```function convert()```
-  * while loop untill ```i``` is bigger then ```RAvalue.length```
-    * if character at ```i``` is character {I, V, X, L, C, D, M}
-      * pushes the corresponding number to an array ```var numbers = [];```
-      * replaces the character in string ```RAvalue```with 0
-    * 
+  * While loop untill ```i``` is bigger then ```RAvalue.length```
+    * If character at ```i``` is character {I, V, X, L, C, D, M}
+      * Pushes the corresponding number to an array ```var numbers = [];```
+      * Replaces the character in string ```RAvalue```with 0
+      * I, X, C, M have other number combiations aswell so depenging if that combination takes 2 letters or 3, the amount will be replaced in string ```RAvalue``` and the corrosponding numbers will be sent to the array
+
+<br />
+
+*
