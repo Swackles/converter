@@ -1,12 +1,6 @@
 var RAvalue;
 var numbers = [];
-
-
-var error = [
-  'color: black',
-  'font-weight: bold',
-  'background-color: red'
-]
+var roman = 'IVXLCDM'
 
 function RA() {
   console.time();
@@ -25,18 +19,18 @@ function check(){
 
   else {
     end('contains numbers');
-}}
-
+  }
+}
 
 function convert(){
-  for (i = 0; i <= RAvalue.length; i++){
+  for (var i = 0; i < RAvalue.length; i++){
     console.log('test');
     // I = 1, II = 2, III = 3, IV = 4, IX = 9
-    if (RAvalue.charAt(i) == 'I'){
-      console.log(i);
-      if (RAvalue.charAt(i++) == 'I'){
+    if (RAvalue.charAt(i) == roman.charAt(0)){
+      console.log(roman.charAt(0));
+      if (RAvalue.charAt(i+1) == roman.charAt(0)){
         console.log(i);
-        if (RAvalue.charAt(i+2) == 'I'){
+        if (RAvalue.charAt(i+2) == roman.charAt(0)){
           RAvalue.replace(RAvalue.charAt(i), '0');
           RAvalue.replace(RAvalue.charAt(i++), '0');
           RAvalue.replace(RAvalue.charAt(i+2), '0');
@@ -50,26 +44,29 @@ function convert(){
           i = i++;
         }
       }
-      else if (RAvalue.charAt(i++) == 'V'){
+      else if (RAvalue.charAt(i++) == roman.charAt(1)){
+        console.log('4')
         RAvalue.replace(RAvalue.charAt(i), '0');
         RAvalue.replace(RAvalue.charAt(i++), '0');
         numbers.push('4');
         i = i++;
       }
-      else if (RAvalue.charAt(i++) == 'x'){
+      else if (RAvalue.charAt(i++) == roman.charAt(2)){
         RAvalue.replace(RAvalue.charAt(i), '0');
         RAvalue.replace(RAvalue.charAt(i++), '0');
         numbers.push('9');
         i = i++;
       }
-
-      RAvalue.replace(RAvalue.charAt(i), '0');
-      numbers.push('1');
+      else {
+        console.log('else');
+        RAvalue.replace(RAvalue.charAt(i), '0');
+        numbers.push('1');
+      }
     }
     // x = 10, XX = 20, XXX = 30, XL = 40, XC = 90
-    if (RAvalue.charAt(i) == 'X'){
-      if (RAvalue.charAt(i++) == 'X'){
-        if (RAvalue.charAt(i+2) == 'X'){
+    if (RAvalue.charAt(i) == roman.charAt(2)){
+      if (RAvalue.charAt(i++) == roman.charAt(2)){
+        if (RAvalue.charAt(i+2) == roman.charAt(2)){
           RAvalue.replace(RAvalue.charAt(i), '0');
           RAvalue.replace(RAvalue.charAt(i++), '0');
           RAvalue.replace(RAvalue.charAt(i+2), '0');
@@ -84,13 +81,13 @@ function convert(){
         }
 
       }
-      else if (RAvalue.charAt(i++) == 'L'){
+      else if (RAvalue.charAt(i++) == roman.charAt(3)){
         RAvalue.replace(RAvalue.charAt(i), '0');
         RAvalue.replace(RAvalue.charAt(i++), '0');
         numbers.push('40');
         i = i++;
       }
-      else if (RAvalue.charAt(i++) == 'C'){
+      else if (RAvalue.charAt(i++) == roman.charAt(4)){
         RAvalue.replace(RAvalue.charAt(i), '0');
         RAvalue.replace(RAvalue.charAt(i++), '0');
         numbers.push('90');
@@ -101,9 +98,9 @@ function convert(){
       numbers.push('10');
     }
     // C = 100, CC = 200, CCC = 300
-    if (RAvalue.charAt(i) == 'C'){
-      if (RAvalue.charAt(i++) == 'C'){
-        if (RAvalue.charAt(i+2) == 'C'){
+    if (RAvalue.charAt(i) == roman.charAt(4)){
+      if (RAvalue.charAt(i++) == roman.charAt(4)){
+        if (RAvalue.charAt(i+2) == roman.charAt(4)){
           RAvalue.replace(RAvalue.charAt(i), '0');
           RAvalue.replace(RAvalue.charAt(i++), '0');
           RAvalue.replace(RAvalue.charAt(i+2), '0');
@@ -117,13 +114,13 @@ function convert(){
           i = i++;
         }
       }
-      else if (RAvalue.charAt(i++) == 'D'){
+      else if (RAvalue.charAt(i++) == roman.charAt(5)){
         RAvalue.replace(RAvalue.charAt(i), '0');
         RAvalue.replace(RAvalue.charAt(i++), '0');
         numbers.push('400');
         i = i++;
       }
-      else if (RAvalue.charAt(i++) == 'M'){
+      else if (RAvalue.charAt(i++) == roman.charAt(6)){
         RAvalue.replace(RAvalue.charAt(i), '0');
         RAvalue.replace(RAvalue.charAt(i++), '0');
         numbers.push('900');
@@ -134,9 +131,9 @@ function convert(){
       numbers.push('100');
     }
     // M = 1000, MM = 2000, MMM = 3000
-    if (RAvalue.charAt(i) == 'M') {
-      if (RAvalue.charAt(i++) == 'M') {
-        if (RAvalue.charAt(i+2) == 'M') {
+    if (RAvalue.charAt(i) == roman.charAt(6)) {
+      if (RAvalue.charAt(i++) == roman.charAt(6)) {
+        if (RAvalue.charAt(i+2) == roman.charAt(6)) {
           RAvalue.replace(RAvalue.charAt(i), '0');
           RAvalue.replace(RAvalue.charAt(i++), '0');
           RAvalue.replace(RAvalue.charAt(i+2), '0');
@@ -154,22 +151,19 @@ function convert(){
       numbers.push('1000');
     }
     // V = 5
-    if (RAvalue.charAt(i) == 'V') {
+    if (RAvalue.charAt(i) == roman.charAt(1)) {
       RAvalue.replace(RAvalue.charAt(i), '0');
       numbers.push('5');
     }
     // L = 50
-    if (RAvalue.charAt(i) == 'L') {
+    if (RAvalue.charAt(i) == roman.charAt(3)) {
       RAvalue.replace(RAvalue.charAt(i), '0');
       numbers.push('50');
     }
     // D = 500
-    if (RAvalue.charAt(i) == 'D') {
+    if (RAvalue.charAt(i) == roman.charAt(5)) {
       RAvalue.replace(RAvalue.charAt(i), '0');
       numbers.push('500');
-    }
-    else {
-      end('contains invalid   letter')
     }
   }
 
