@@ -3,7 +3,7 @@ p1 {
   font-weight: bold;
 }
 
-.error {
+.NError, .CError1, .CError2, .CError3, .LError {
   color: #ff0000;
 }
 
