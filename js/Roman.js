@@ -23,7 +23,7 @@ function RA() {
   }
   else if (check.valid == 'false') {
     if (check.type == "LError"){
-      var text = document.createTextNode("Number "+check.letter+" does not exist in roman numbers");
+      var text = document.createTextNode("Your input has "+check.occurence+" characters that do not match roman numbers");
 
       p.appendChild(text);
       p.className = check.type;
@@ -95,7 +95,7 @@ function RAhub(RAvalue){
         }
       }
       else if (result.valid == "false") {
-        return { type: result.type, letter: result.letter , valid: result.valid}
+        return { type: result.type, occurence: result.occurence, valid: result.valid}
       }
     }
     else if (valid.valid == "false") {
@@ -109,10 +109,6 @@ function RAhub(RAvalue){
 
 function RAcheck(RAvalue) {
   var unique = ["IV", "IX", "XL", "XC", "CD", "CM"];
-  var validNum = ["I", "V", "X", "L", "C", "D", "M"];
-  if (RAvalue.match(/validNum/g)){
-    return { type: "LError", letter: RAvalue.charAt(i), valid: "false"}
-  }
   if (RAvalue.match(/IV/g) != "null"){
     var i = (RAvalue.match(/IV/g) || []).length;
     if (i > 1) {
@@ -392,6 +388,10 @@ function RAconvert(RAvalue){
     if (RAvalue.charAt(i) == roman.charAt(5)) {
       RAvalue = RAvalue.replace('D', '0');
       numbers.push(500);
+    }
+    if ((RAvalue.match(/0/g) || []).length != RAvalue.length) {
+      console.log("stuff");
+      return { type: "LError", occurence: RAvalue.length - (RAvalue.match(/0/g) || []).length, valid: "false"}
     }
   return { result: numbers.reduce( function(prev, cur) { return prev + cur; } ), numberArray: numbers, valid: "true" }
   }

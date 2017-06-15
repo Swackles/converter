@@ -13,5 +13,5 @@ div {
   height: 300px;
   box-shadow: 1px 2px 1px 2px;
   border-radius: 5px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
