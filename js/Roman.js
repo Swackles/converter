@@ -34,7 +34,7 @@ function RA() {
       console.groupEnd();
     }
     if (check.type == "NError"){
-      var text = document.createTextNode("Answer to your roman number "+check.RAvalue+" is "+check.result);
+      var text = document.createTextNode("Your input includes arabian numbers");
 
       p.appendChild(text);
       p.className = check.type;
@@ -389,12 +389,13 @@ function RAconvert(RAvalue){
       RAvalue = RAvalue.replace('D', '0');
       numbers.push(500);
     }
+  }
     if ((RAvalue.match(/0/g) || []).length != RAvalue.length) {
+      console.log(RAvalue);
       console.log("stuff");
       return { type: "LError", occurence: RAvalue.length - (RAvalue.match(/0/g) || []).length, valid: "false"}
     }
   return { result: numbers.reduce( function(prev, cur) { return prev + cur; } ), numberArray: numbers, valid: "true" }
-  }
 }
 
 function RApos(numbers) {

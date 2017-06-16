@@ -43,11 +43,11 @@ This is a number converter, it convers diffrent types of numbers to arabic.
 ###### Errors
 | Type | When occures | HTML message
 | :---: | :--- | :--- |
-| LError | When it meets a invalid letter | Number <letter> does not exist in roman numbers |
-| NError | When input string contains numbers |
-| CError1 | When too many of characters exists | You can't have number <letter>, <occurence> times |
-| CError2 | When 2 numbers exists which can't exist at the same time | You can't have number <letter1> and number <letter2> at the same time. |
-| CError3 | When number exists after which another number can't exists over 1 time |You can't have number <letter1> over one time, when number <letter2> exists. |
+| LError | When it meets a invalid letter | Your input has "+check.occurence+" characters that do not match roman numbers |
+| NError | When input string contains numbers | Your input includes arabian numbers |
+| CError1 | When too many of characters exists | You can't have number " +check.letter+ ", " +check.occurence+ " times." |
+| CError2 | When 2 numbers exists which can't exist at the same time | You can't have number " +check.letter1+ " and number " +check.letter2+ " at the same time. |
+| CError3 | When number exists after which another number can't exists over 1 time | You can't have number " +check.letter1+ " over one time, when number " +check.letter2+ " exists. |
 
 <br>
 
